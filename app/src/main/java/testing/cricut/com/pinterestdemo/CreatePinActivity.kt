@@ -43,16 +43,16 @@ class CreatePinActivity : AppCompatActivity() {
 
   private fun onSavePin() {
     val pinImageUrl = imageUrl?.text.toString()
-    val board = boardId?.text.toString()
+    val board = prefs.baordID
     val noteText = note?.text.toString()
     if (!Utils.isEmpty(noteText) && !Utils.isEmpty(board) && !Utils.isEmpty(pinImageUrl)) {
       PDKClient
-          .getInstance().createPin(noteText, board, pinImageUrl, pinImageUrl,
+          .getInstance().createPin(noteText, board, pinImageUrl, link?.text.toString(),
               object : PDKCallback() {
                 override fun onSuccess(response: PDKResponse) {
                   Log.d(javaClass.name, response.data.toString())
                   responseView?.setText(response.data.toString())
-
+                  Toast.makeText(applicationContext, "Success", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onFailure(exception: PDKException) {

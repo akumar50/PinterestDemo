@@ -21,6 +21,7 @@ class HomeActivity : AppCompatActivity(){
 
   private val DEBUG = true
   private var pinsButton: Button? = null
+  private var boardButton: Button? = null
   private var logoutButton: Button? = null
   private var nameTv: TextView? = null
   private var profileIv: ImageView? = null
@@ -39,6 +40,12 @@ class HomeActivity : AppCompatActivity(){
     pinsButton?.setOnClickListener(object : View.OnClickListener {
       override fun onClick(v: View) {
         onMyPins()
+      }
+    })
+    boardButton = findViewById(R.id.board_button) as Button
+    boardButton?.setOnClickListener(object : View.OnClickListener {
+      override fun onClick(v: View) {
+        onMyBoards()
       }
     })
     logoutButton = findViewById(R.id.logout_button) as Button
@@ -75,7 +82,10 @@ class HomeActivity : AppCompatActivity(){
     startActivity(i)
   }
 
-
+  private fun onMyBoards() {
+    val i = Intent(this, CreateBoardActivity::class.java)
+    startActivity(i)
+  }
 
   private fun onLogout() {
     PDKClient.getInstance().logout()
