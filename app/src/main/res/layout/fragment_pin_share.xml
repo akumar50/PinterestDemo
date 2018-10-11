@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_pin_share"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+>
+ <ImageView
+     android:id="@+id/image_view"
+     android:layout_width="200dp"
+     android:layout_height="200dp"
+     android:layout_margin="10dp"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+ />
+
+  <Spinner
+      android:id="@+id/boards"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:spinnerMode="dropdown"
+      android:visibility="gone"
+      app:layout_constraintTop_toBottomOf="@+id/image_view"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"/>
+
+ <Button
+     android:id="@+id/createButton"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Create Board"
+     android:layout_margin="10dp"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintEnd_toStartOf="@+id/saveButton"
+     app:layout_constraintBottom_toBottomOf="parent"/>
+
+ <Button
+     android:id="@+id/saveButton"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Save Pin"
+     android:layout_margin="10dp"
+     app:layout_constraintStart_toEndOf="@+id/createButton"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

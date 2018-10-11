@@ -20,8 +20,7 @@ import com.squareup.picasso.Picasso
 class HomeActivity : AppCompatActivity(){
 
   private val DEBUG = true
-  private var pinsButton: Button? = null
-  private var boardButton: Button? = null
+  private var shareButton: Button? = null
   private var logoutButton: Button? = null
   private var nameTv: TextView? = null
   private var profileIv: ImageView? = null
@@ -36,18 +35,13 @@ class HomeActivity : AppCompatActivity(){
 
     nameTv = findViewById(R.id.name_textview) as TextView
     profileIv = findViewById(R.id.profile_imageview) as ImageView
-    pinsButton = findViewById(R.id.pins_button) as Button
-    pinsButton?.setOnClickListener(object : View.OnClickListener {
+    shareButton = findViewById(R.id.share_button) as Button
+    shareButton?.setOnClickListener(object : View.OnClickListener {
       override fun onClick(v: View) {
-        onMyPins()
+        sharePins()
       }
     })
-    boardButton = findViewById(R.id.board_button) as Button
-    boardButton?.setOnClickListener(object : View.OnClickListener {
-      override fun onClick(v: View) {
-        onMyBoards()
-      }
-    })
+
     logoutButton = findViewById(R.id.logout_button) as Button
     logoutButton?.setOnClickListener(object : View.OnClickListener {
       override fun onClick(v: View) {
@@ -77,13 +71,8 @@ class HomeActivity : AppCompatActivity(){
     })
   }
 
-  private fun onMyPins() {
-    val i = Intent(this, CreatePinActivity::class.java)
-    startActivity(i)
-  }
-
-  private fun onMyBoards() {
-    val i = Intent(this, CreateBoardActivity::class.java)
+  private fun sharePins() {
+    val i = Intent(this, PinterestShareActivity::class.java)
     startActivity(i)
   }
 

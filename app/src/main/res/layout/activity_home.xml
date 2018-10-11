@@ -28,29 +28,20 @@
   <Button
       android:layout_width="200dip"
       android:layout_height="wrap_content"
-      android:text="Create Pins"
-      android:id="@+id/pins_button"
+      android:text="Pinterest Share"
+      android:id="@+id/share_button"
       android:layout_centerHorizontal="true"
       android:layout_below="@+id/name_textview"
       android:background="@null"
   />
 
-  <Button
-      android:layout_width="200dip"
-      android:layout_height="wrap_content"
-      android:text="Create Boards"
-      android:id="@+id/board_button"
-      android:layout_centerHorizontal="true"
-      android:layout_below="@+id/pins_button"
-      android:background="@null"
-  />
 
   <Button
       android:layout_width="200dip"
       android:layout_height="wrap_content"
       android:id="@+id/logout_button"
       android:text="Logout"
-      android:layout_below="@+id/board_button"
+      android:layout_below="@+id/share_button"
       android:layout_centerHorizontal="true"
       android:background="@null"
   />
